@@ -1,10 +1,24 @@
 import environ
 from pathlib import Path
 from datetime import timedelta
+import os 
+import os
+from pathlib import Path
+import environ
 
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+# 1. Base Directory setting (Aapka main root folder: AML-Software)
+BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
+
 env = environ.Env()
-environ.Env.read_env(BASE_DIR / '.env')
+
+# 2. Yeh line bilkul confirm karegi ke .env main root folder se hi load ho
+env_file = os.path.join(BASE_DIR, '.env')
+
+if os.path.exists(env_file):
+    environ.Env.read_env(env_file)
+else:
+    # Agar ab bhi nahi milti toh terminal par print ho jayega ke Django kahan dhoond raha hai
+    print(f"⚠️ Warning: .env file not found at {env_file}")
 
 SECRET_KEY = env('SECRET_KEY')
 DEBUG = env.bool('DEBUG', default=False)
