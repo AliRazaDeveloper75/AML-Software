@@ -1,0 +1,162 @@
+# ═══════════════════════════════════════════════════════════════
+#  Al Merak AML Software — .gitignore
+# ═══════════════════════════════════════════════════════════════
+
+# ─── ENVIRONMENT FILES (NEVER commit these) ─────────────────────
+.env
+.env.*
+!.env.example
+*.env
+backend/.env
+frontend/.env
+frontend/.env.local
+frontend/.env.production
+
+# ─── PYTHON / DJANGO ────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+*.pyd
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+backend/venv/
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+backend/staticfiles/
+backend/mediafiles/
+backend/media/
+*.pot
+*.mo
+
+# Django migrations (optional — remove this if you want to commit migrations)
+# backend/**/migrations/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+*.pid
+
+# Coverage
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# Pytest
+.pytest_cache/
+.tox/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ─── NODE / REACT / VITE ────────────────────────────────────────
+node_modules/
+frontend/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+dist/
+frontend/dist/
+build/
+frontend/build/
+.vite/
+
+# Cache
+.npm
+.eslintcache
+.stylelintcache
+
+# ─── IDE & EDITORS ──────────────────────────────────────────────
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.project
+.classpath
+.settings/
+
+# ─── OS FILES ───────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ─── LOGS ───────────────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# ─── UPLOADS & MEDIA ────────────────────────────────────────────
+uploads/
+media/
+backend/uploads/
+*.pdf
+*.doc
+*.docx
+
+# ─── SECRET & SENSITIVE FILES ───────────────────────────────────
+*.pem
+*.key
+*.cert
+*.p12
+secrets/
+credentials/
+service-account*.json
+google-credentials.json
+
+# ─── DATABASE ───────────────────────────────────────────────────
+*.sqlite3
+*.db
+*.sql
+dump.sql
+backup.sql
+
+# ─── DOCKER (keep Dockerfile, ignore runtime files) ─────────────
+.docker/
+docker-compose.override.yml
+
+# ─── TEMPORARY FILES ────────────────────────────────────────────
+tmp/
+temp/
+*.tmp
+*.bak
+*.orig
+*.backup
+
+# ─── PACKAGE LOCKS (choose one — keep only what you use) ────────
+# Uncomment if using yarn:
+# package-lock.json
+
+# ─── TESTING ────────────────────────────────────────────────────
+.jest-cache/
+test-results/
+playwright-report/

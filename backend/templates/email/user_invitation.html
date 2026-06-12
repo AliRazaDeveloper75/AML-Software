@@ -1,0 +1,67 @@
+{% extends "email/base.html" %}
+{% block title %}You're Invited — Al Merak AML{% endblock %}
+{% block content %}
+
+  <!-- Banner -->
+  <table width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 28px 0;">
+    <tr>
+      <td align="center" style="background:linear-gradient(135deg,#ede9fe,#ddd6fe);border-radius:12px;padding:20px;">
+        <p style="color:#6d28d9;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:0 0 4px 0;">You're Invited</p>
+        <p style="color:#4c1d95;font-size:18px;font-weight:800;margin:0;">Join {{ org_name }}</p>
+      </td>
+    </tr>
+  </table>
+
+  <h1 style="color:#1e293b;font-size:20px;font-weight:700;margin:0 0 8px 0;">Welcome to Al Merak AML</h1>
+  <p style="color:#64748b;font-size:15px;margin:0 0 24px 0;">Hi <strong style="color:#334155;">{{ first_name }}</strong>,</p>
+
+  <p style="color:#475569;font-size:14px;margin:0 0 24px 0;">
+    You've been invited to join <strong>{{ org_name }}</strong> on Al Merak AML — the UAE's compliance and anti-money laundering platform.
+  </p>
+
+  <!-- Credentials Box -->
+  <table width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 28px 0;">
+    <tr>
+      <td style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:20px 24px;">
+        <p style="color:#64748b;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin:0 0 14px 0;">Your Login Details</p>
+        <table width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+            <td style="padding:8px 0;border-bottom:1px solid #f1f5f9;">
+              <span style="color:#94a3b8;font-size:12px;">Email</span><br/>
+              <strong style="color:#334155;font-size:14px;">{{ email }}</strong>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:8px 0;">
+              <span style="color:#94a3b8;font-size:12px;">Temporary Password</span><br/>
+              <strong style="color:#334155;font-size:14px;font-family:'Courier New',Courier,monospace;background:#ede9fe;padding:2px 8px;border-radius:4px;">{{ temp_password }}</strong>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+  <!-- CTA Button -->
+  <table width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 28px 0;">
+    <tr>
+      <td align="center">
+        <a href="{{ login_url }}" style="display:inline-block;background:linear-gradient(135deg,#7c3aed,#4f46e5);color:#fff;text-decoration:none;font-size:15px;font-weight:700;padding:14px 36px;border-radius:10px;letter-spacing:0.3px;">
+          Log In to Al Merak →
+        </a>
+      </td>
+    </tr>
+  </table>
+
+  <!-- Warning -->
+  <table width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 8px 0;">
+    <tr>
+      <td style="background:#fffbeb;border-left:4px solid #f59e0b;border-radius:4px;padding:14px 16px;">
+        <p style="color:#92400e;font-size:13px;margin:0;">
+          ⚠️ <strong>Please change your password</strong> immediately after your first login.
+        </p>
+      </td>
+    </tr>
+  </table>
+
+{% endblock %}
